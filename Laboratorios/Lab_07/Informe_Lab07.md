@@ -148,13 +148,13 @@ GRAFICA:
 
 ## 7. Conclusiones
 
-1. **No existe un método universalmente mejor.** El mejor filtro cambió con la señal: LMS en los ECG de 100 Hz, notch 60 + 120 Hz en el EMG, y pasa-banda / notch / LMS prácticamente empatados en el EEG.
+1. No existe un método universalmente mejor ya que el mejor filtro cambió con la señal: LMS en los ECG de 100 Hz, notch 60 + 120 Hz en el EMG, y pasa-banda / notch / LMS prácticamente empatados en el EEG.
 
-2. **La frecuencia de muestreo condiciona todo el diseño del filtrado.** Con Fs = 100 Hz, 60 y 120 Hz superan Nyquist (50 Hz): los notch no se pudieron diseñar y la interferencia simulada queda plegada dentro de la banda del ECG. Para trabajar con interferencia de red real conviene muestrear a una Fs claramente mayor que 120 Hz.
+2. La frecuencia de muestreo condiciona todo el diseño del filtrado. Con Fs = 100 Hz, 60 y 120 Hz superan Nyquist (50 Hz): los notch no se pudieron diseñar y la interferencia simulada queda plegada dentro de la banda del ECG. Para trabajar con interferencia de red real conviene muestrear a una Fs claramente mayor que 120 Hz.
 
-3. **El filtro adaptativo (LMS) fue el más robusto cuando el filtro fijo no podía actuar.** En los ECG a 100 Hz, el LMS mejoró la SNR en 8.1 dB (ECG DIII) mientras el notch no tenía efecto. En EMG y EEG se comportó casi igual que el notch en cascada. Su limitación: necesita una señal de referencia correlacionada con la interferencia y no puede cancelar el ruido gaussiano.
+3. El filtro adaptativo (LMS) fue el más robusto cuando el filtro fijo no podía actuar.En los ECG a 100 Hz, el LMS mejoró la SNR en 8.1 dB (ECG DIII) mientras el notch no tenía efecto. En EMG y EEG se comportó casi igual que el notch en cascada. Su limitación: necesita una señal de referencia correlacionada con la interferencia y no puede cancelar el ruido gaussiano.
 
-4. **El pasa-banda solo sirve si la interferencia cae fuera de su banda.** En el EMG (20–450 Hz) fue prácticamente inútil contra 60/120 Hz (+0.04 dB); en el EEG sí rindió bien (+6.53 dB) porque 60 y 120 Hz quedan fuera de 0.5–40 Hz.
+4. El pasa-banda solo sirve si la interferencia cae fuera de su banda, ya que en el EMG (20–450 Hz) fue prácticamente inútil contra 60/120 Hz (+0.04 dB); en el EEG sí rindió bien (+6.53 dB) porque 60 y 120 Hz quedan fuera de 0.5–40 Hz.
 
-5. **El Wavelet con umbral universal no es una solución automática.** En el EMG y en el ECG DIII quedó por debajo de los métodos dirigidos, e incluso empeoró el ECG DIII (-0.98 dB). Su rendimiento depende de cómo se estima el ruido (nivel D1) y de si la señal es de banda ancha o contiene interferencias dentro de esa banda.
+5. El Wavelet con umbral universal no es una solución automática. En el EMG y en el ECG DIII quedó por debajo de los métodos dirigidos, e incluso empeoró el ECG DIII (-0.98 dB). Su rendimiento depende de cómo se estima el ruido (nivel D1) y de si la señal es de banda ancha o contiene interferencias dentro de esa banda.
 
