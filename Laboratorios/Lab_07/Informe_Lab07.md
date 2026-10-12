@@ -112,6 +112,8 @@ Aquí también 60 y 120 Hz superan el límite de Nyquist (50 Hz), por lo que **n
 GRÁFICA REPRESENTATIVA:
 <img width="1387" height="767" alt="image" src="https://github.com/user-attachments/assets/53d73110-47d1-46ff-af9b-559e39774d36" />
 
+<img width="1394" height="387" alt="image" src="https://github.com/user-attachments/assets/2354c215-4a8d-4769-8070-4146c7ca4e14" />
+
 **Lectura:**
 - El comportamiento es el mismo que en el ECG DIII: el pasa-banda mejora (+3.0 dB) y los notch no tienen efecto por la limitación de Nyquist.
 - **Este notebook solo está ejecutado hasta la comparación de los filtros convencionales.** Faltan los resultados de LMS, Wavelet y método híbrido, y no se calcularon indicadores fisiológicos (por ejemplo, frecuencia cardiaca), por lo que no se puede concluir nada sobre el efecto de la hipoventilación en el ECG a partir de estos archivos.
