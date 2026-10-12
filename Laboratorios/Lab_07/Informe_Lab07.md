@@ -51,6 +51,11 @@ En los cuatro registros el contador `nSeq` fue continuo: **0 paquetes perdidos**
 | Wavelet (denoising) | 43.18 | 5.06 | 0.8297 | +3.37 |
 | Híbrido notch + Wavelet | 39.30 | 5.88 | 0.8940 | +4.19 |
 
+GRAFICA:
+
+<img width="1387" height="1277" alt="emg1_lab7" src="https://github.com/user-attachments/assets/6490b45b-c5b7-4565-a045-78b8884a75fa" />
+
+
 **Lectura:**
 - El pasa-banda **casi no mejoró nada**: 60 y 120 Hz caen dentro de su banda de paso (20–450 Hz), así que no los puede quitar.
 - Los métodos que atacan directamente las interferencias (notch en cascada y LMS) fueron los mejores y quedaron muy cerca entre sí.
@@ -66,6 +71,10 @@ En los cuatro registros el contador `nSeq` fue continuo: **0 paquetes perdidos**
 **Contaminación simulada:** 0.326 mV a 60 Hz, 0.196 mV a 120 Hz y ruido gaussiano de σ = 0.098 mV.
 
 **Punto crítico:** con Fs = 100 Hz el límite de Nyquist es 50 Hz, por lo que 60 y 120 Hz están por encima. El notebook **no pudo diseñar los notch** (quedan idénticos a la señal contaminada). Matemáticamente, esas senoides muestreadas a 100 Hz se pliegan (aliasing) a 40 Hz y 20 Hz, es decir, quedan dentro de la banda del ECG.
+Grafica:
+
+<img width="1401" height="1277" alt="ECG_aero_lab7" src="https://github.com/user-attachments/assets/6385053a-4e9f-4a58-9786-7cc834db0a1e" />
+
 
 | Método | RMSE (mV) | SNR (dB) | r | Mejora SNR (dB) |
 |---|---:|---:|---:|---:|
@@ -112,6 +121,11 @@ Aquí también 60 y 120 Hz superan el límite de Nyquist (50 Hz), por lo que **n
 **Registro:** canal A2, 1000 Hz de muestreo, 46.8 s. Rango de -1.497 a 0.984 mV y σ = 0.262 mV. El archivo incluye además los canales A5 y A6, que no se analizan en el notebook.
 
 **Contaminación simulada:** 0.262 mV a 60 Hz, 0.157 mV a 120 Hz y ruido gaussiano de σ = 0.079 mV. Con Fs = 1000 Hz, 60 y 120 Hz están por debajo de Nyquist, así que **todos los métodos pudieron aplicarse**.
+
+GRAFICA: 
+
+<img width="1387" height="1277" alt="eeg_LAB7" src="https://github.com/user-attachments/assets/8c0261c9-cc9c-4ab0-9ad8-d03a26a205a4" />
+
 
 | Método | RMSE (mV) | SNR (dB) | r | Mejora SNR (dB) |
 |---|---:|---:|---:|---:|
