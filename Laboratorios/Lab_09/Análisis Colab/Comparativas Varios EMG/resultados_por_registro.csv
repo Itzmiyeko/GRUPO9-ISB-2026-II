@@ -1,0 +1,9 @@
+﻿Archivo,Región,Tipo,Sat. (%) (≥1022),RMS filtrado (µV),ε (µV),Umbral (µV),Segmentos detectados,Duración segmentos (s),% tiempo activo,Pico espectral activo (Hz),MDF activa (Hz),% potencia 20–150 Hz,RMS baseline (µV),SNR (dB),Ventanas reposo/contr./trans.,Grupos,RMS reposo (µV),RMS contracción (µV),Top-3 Fisher,Pliegues con ambas clases en prueba,LDA (15 car.),SVM-RBF (15 car.),Umbral en RMS,CNN (STFT 500 ms),CNN: pliegues con ambas clases
+Prueba 01 base (brazo),Brazo,baseline,0.0,4.5,13.4,4.7,5,"0.6, 0.4, 0.3, 1.3, 1.2",12.5,180,181,27.7,,,,,,,,,,,,,
+MOV LEVE 02 (brazo),Brazo,actividad,0.0,30.1,13.4,14.6,3,"12.6, 7.6, 3.2",61.0,54,72,92.5,4.5,16.5,114/184/8,6 bloques de tiempo,8.9,28.8,"MNF (1.5), P_150_450 (1.5), P_20_80 (1.1)",3/5,0.806,0.859,0.904,0.742,3/5
+OPOSICION 02 (brazo),Brazo,actividad,0.165,221.0,13.4,52.3,2,"15.5, 5.5",62.0,47,66,96.2,4.5,33.9,98/165/7,6 bloques de tiempo,25.9,217.7,"WAMP (4.7), SSC (2.3), ZC (1.6)",2/5,0.787,0.703,0.99,0.862,2/5
+Prueba 02 base (dedo mano),Dedo/mano,baseline,0.0,57.8,173.5,64.1,1,4.7,15.2,120,120,90.3,,,,,,,,,,,,,
+MOV LEVE 03 (dedo mano),Dedo/mano,actividad,0.021,181.6,173.5,48.9,1,19.9,69.7,120,131,60.7,57.8,9.9,66/158/3,6 bloques de tiempo,36.4,175.2,"P_150_450 (2.2), P_80_150 (1.4), MNF (1.3)",2/5,0.927,0.877,0.972,0.921,2/5
+OPOSICION 01 (dedo mano),Dedo/mano,actividad,0.279,311.7,173.5,127.4,3,"18.9, 0.4, 2.4",68.8,120,132,59.6,57.8,14.6,73/170/8,6 bloques de tiempo,95.1,344.4,"SSC (5.7), WAMP (5.1), ZC (4.8)",2/5,0.901,0.957,0.966,0.959,2/5
+BASELINEBRAZO,Brazo,baseline,0.0,5.9,17.6,6.1,22,"0.6, 8.7, 0.4, 5.6, 1.4, 1.4…",46.7,120,131,55.8,,,,,,,,,,,,,
+PRUEBABRAZO1,Brazo,actividad,0.435,230.2,17.6,43.2,21,"1.9, 1.7, 1.3, 1.2, 1.7, 1.4…",41.8,76,80,88.8,5.9,31.9,256/188/60,ciclos,26.3,292.3,"SSC (6.6), WAMP (6.5), ZC (5.2)",5/5,0.966,0.972,0.991,0.981,5/5
