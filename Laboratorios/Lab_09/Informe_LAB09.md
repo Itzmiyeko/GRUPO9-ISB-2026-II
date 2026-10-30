@@ -16,6 +16,7 @@ Se trabajó con los registros BASELINE y PRUEBA del notebook principal y con reg
      
      
 2. **Preprocesamiento digital de la señal**  
+
    Se inspeccionó la densidad espectral de potencia mediante Welch para reconocer componentes de ruido. Después se aplicó un filtro Butterworth pasa banda de 20–450 Hz y un filtro notch de 60 Hz. El filtrado se realizó en fase cero para evitar desplazamientos temporales.  
    ![][image2]  
    Figura 2\. Espectro de potencia de la señal  
