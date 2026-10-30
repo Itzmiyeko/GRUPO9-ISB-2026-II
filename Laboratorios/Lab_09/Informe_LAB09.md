@@ -11,21 +11,21 @@ Se trabajó con los registros BASELINE y PRUEBA del notebook principal y con reg
 1. **Lectura y** **Conversión de cuentas ADC a milivoltios**  
    Se importaron las muestras y los metadatos de OpenSignals. Los valores del ADC se convirtieron a milivoltios con los parámetros del BITalino (VCC \= 3.3 V, ganancia \= 1009 y n \= 10 bits). El rango medible calculado fue ±1.632 mV y la resolución, 3.19 µV por cuenta.  
      
-   ![](Imágenes_md/imagen1.png)  
-   Figura 1\. Conversión de las cuentas del ADC a voltaje.  
+   <p align="center"><img src="Imágenes_md/imagen1.png" alt="Figura 1: Conversión de las cuentas del ADC a voltaje"></p>
+   <p align="center">Figura 1. Conversión de las cuentas del ADC a voltaje.</p>
      
      
 2. **Preprocesamiento digital de la señal**  
 
    Se inspeccionó la densidad espectral de potencia mediante Welch para reconocer componentes de ruido. Después se aplicó un filtro Butterworth pasa banda de 20–450 Hz y un filtro notch de 60 Hz. El filtrado se realizó en fase cero para evitar desplazamientos temporales.  
-   ![](Imágenes_md/imagen2.png)  
-   Figura 2\. Espectro de potencia de la señal  
+   <p align="center"><img src="Imágenes_md/imagen2.png" alt="Figura 2: Espectro de potencia de la señal"></p>
+   <p align="center">Figura 2. Espectro de potencia de la señal</p>
      
      
      
      
-   ![](Imágenes_md/imagen3.png)  
-   Figura 3\. Comparación de la señal temporal antes y después del filtrado.  
+   <p align="center"><img src="Imágenes_md/imagen3.png" alt="Figura 3: Comparación de la señal temporal antes y después del filtrado"></p>
+   <p align="center">Figura 3. Comparación de la señal temporal antes y después del filtrado.</p>
      
    En el registro principal, el RMS del baseline filtrado fue 5.53 µV y el RMS global de PRUEBA fue 153.60 µV; la relación señal-ruido aproximada calculada fue 28.9 dB.  
  
@@ -35,8 +35,8 @@ Se trabajó con los registros BASELINE y PRUEBA del notebook principal y con reg
 
 3. **Detección de actividad y segmentación**  
    Se calculó la envolvente RMS móvil y se estimó un umbral a partir del reposo dentro de cada registro. El umbral obtenido solo con BASELINE marcó el 100 % de PRUEBA como activo, por lo que se utilizó el 20 % de muestras con menor envolvente de la propia PRUEBA para estimar el reposo. Con este criterio se detectaron 20 contracciones, con duración media de 1.21 ± 0.07 s.  
-   ![](Imágenes_md/imagen4.png)  
-   Figura 4\. Envolvente RMS, umbral y contracciones detectadas.
+   <p align="center"><img src="Imágenes_md/imagen4.png" alt="Figura 4: Envolvente RMS, umbral y contracciones detectadas"></p>
+   <p align="center">Figura 4. Envolvente RMS, umbral y contracciones detectadas.</p>
 
    
 
@@ -44,27 +44,27 @@ Se trabajó con los registros BASELINE y PRUEBA del notebook principal y con reg
    La señal se dividió en ventanas de 250 ms con 50 % de solapamiento (salto de 125 ms). Se obtuvieron 503 ventanas: 277 de reposo, 169 de contracción y 57 de transición. Las transiciones se conservaron identificadas, pero no se usaron como clases de reposo o contracción.  
      
    Para cada ventana se calcularon 15 características temporales y espectrales, entre ellas MAV, RMS, iEMG, VAR, WL, ZC, SSC, WAMP, asimetría, curtosis, MNF, MDF y potencia relativa en bandas de frecuencia. El ranking de Fisher destacó MNF (15.31), WAMP (8.52) y MDF (7.89).  
-   ![](Imágenes_md/imagen5.png)  
-   Figura 5\. Comparación y ranking de características por razón de Fisher.
+   <p align="center"><img src="Imágenes_md/imagen5.png" alt="Figura 5: Comparación y ranking de características por razón de Fisher"></p>
+   <p align="center">Figura 5. Comparación y ranking de características por razón de Fisher.</p>
 
    
 
 5. **Clasificación**  
    Se evaluaron LDA y SVM con kernel RBF, usando validación cruzada GroupKFold de cinco pliegues agrupada por ciclo para evitar que ventanas del mismo ciclo quedaran repartidas entre entrenamiento y prueba. Con todas las características, ambos modelos alcanzaron una exactitud balanceada de 0.994 ± 0.007. Como comparación, el modelo con solo RMS obtuvo 0.864 ± 0.023 con LDA y 0.988 ± 0.011 con SVM-RBF.  
-   **![](Imágenes_md/imagen6.png)**  
-   Figura 6\. Matrices de confusión del clasificador.  
+   <p align="center"><img src="Imágenes_md/imagen6.png" alt="Figura 6: Matrices de confusión del clasificador"></p>
+   <p align="center">Figura 6. Matrices de confusión del clasificador.</p>
    
 
 También se entrenó una CNN pequeña con espectrogramas STFT de 500 ms y 1 330 parámetros entrenables. Su exactitud balanceada media fue 0.989 ± 0.013.
 
-**![](Imágenes_md/imagen4.png)**
+<p align="center"><img src="Imágenes_md/imagen4.png" alt="Figura 7: Resultados de la CNN con espectrogramas"></p>
 
-Figura 7\. Resultados de la CNN con espectrogramas.
+<p align="center">Figura 7. Resultados de la CNN con espectrogramas.</p>
 
 6. **Comparación con nuevas señales**  
    El notebook complementario aplicó el mismo flujo a registros de movimiento leve y oposición en brazo y dedo/mano. En estas señales el esfuerzo tiene forma de rampa de aproximadamente 30 s, por lo que se analizó también la evolución del RMS y de las frecuencias MNF/MDF en el tiempo.  
-   **![](Imágenes_md/imagen8.png)** 
-   Figura 8\. Evolución del RMS y análisis espectral de los registros nuevos.  
+   <p align="center"><img src="Imágenes_md/imagen8.png" alt="Figura 8: Evolución del RMS y análisis espectral de los registros nuevos"></p>
+   <p align="center">Figura 8. Evolución del RMS y análisis espectral de los registros nuevos.</p>
      
      
    Los picos RMS reportados fueron: 94 µV para MOV LEVE 02 (brazo), 591 µV para OPOSICION 02 (brazo), 410 µV para MOV LEVE 03 (dedo/mano) y 555 µV para OPOSICION 01 (dedo/mano). En los registros nuevos, los resultados de clasificación variaron según el registro y el número de pliegues que contenían ambas clases; por ello deben interpretarse con cautela y no compararse directamente con PRUEBA.  
