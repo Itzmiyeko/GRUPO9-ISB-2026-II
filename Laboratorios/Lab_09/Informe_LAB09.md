@@ -1,4 +1,4 @@
-ANÁLISIS Y ETIQUETADO DE SEÑALES EMG
+## ANÁLISIS Y ETIQUETADO DE SEÑALES EMG
 
 **Objetivo del procedimiento**
 
