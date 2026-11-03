@@ -31,7 +31,6 @@ Cada derivación tiene 4 archivos `.txt` de OpenSignals, uno por condición, par
 | Hipoventilación | Retención de la respiración el mayor tiempo posible |
 | Aeróbica | Registro inmediatamente después de unos 3 min de ejercicio |
 
-Las derivaciones se registraron una después de otra, con varios minutos de diferencia (por ejemplo, la condición basal se grabó a las 15:08 en D1, a las 15:15 en D2 y a las 15:21 en D3).
 
 ### 2.2 Configuración y lectura de los registros
 
