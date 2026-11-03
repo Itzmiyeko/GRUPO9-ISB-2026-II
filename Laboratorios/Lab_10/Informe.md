@@ -1,7 +1,9 @@
 # Tratamiento de la señal ECG: detección de latidos, extracción de características y clasificación
 
 **Curso:** Introducción a las Señales Biomédicas — Universidad Peruana Cayetano Heredia
+
 **Equipo de adquisición:** BITalino (r)evolution, sensor ECG
+
 **Derivaciones analizadas:** D1, D2 y D3 (triángulo de Einthoven)
 
 ## 1. Objetivos
