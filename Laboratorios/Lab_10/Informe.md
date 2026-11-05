@@ -121,7 +121,6 @@ Se juntan las cinco familias para todos los latidos. El resultado es una tabla d
 2. Comparación entre validación por bloques y validación con latidos mezclados al azar (con fuga), usando Random Forest solo con forma.
 3. Matriz de confusión del mejor modelo e importancia de características de Random Forest.
 
-> **Nota:** la celda final del cuaderno (`experimento(...)`) quedó en los tres archivos con la llamada de ejemplo `experimento("D2")`. Por eso el cuestionario final no se desarrolla en este informe. Los resultados por derivación provienen de las celdas B.1 a B.7, ejecutadas con `DERIVACION = "D1"`, `"D2"` y `"D3"` en cada notebook.
 
 ---
 
@@ -146,12 +145,6 @@ Se juntan las cinco familias para todos los latidos. El resultado es una tabla d
 
 No hubo paquetes perdidos en ningún archivo. Las duraciones fueron de 30.4 s a 31.1 s, salvo D2 hiperventilación (36.6 s) y D2 hipoventilación (35.2 s).
 
-**Figura 1.** *Seis segundos de cada registro filtrado (4 condiciones × 3 derivaciones).*
-`[Insertar imagen: salida de la celda A.3 del notebook]`
-
-**Figura 2.** *Zoom a los registros marcados con ❌ o ⚠️ con los picos R detectados.*
-`[Insertar imagen: salida de la celda A.4 (zoom) del notebook]`
-
 ### 3.2 Frecuencia cardiaca media (lpm)
 
 | Condición | D1 | D2 | D3 |
@@ -161,8 +154,9 @@ No hubo paquetes perdidos en ningún archivo. Las duraciones fueron de 30.4 s a 
 | Hipoventilación | 209.3 (artefacto) | 108.8 | 104.0 |
 | Aeróbica | 138.4 | 147.5 | 140.5 |
 
-**Figura 3.** *FC media por condición y derivación, y tacograma de D1.*
-`[Insertar imagen: salida de la celda A.5 del notebook]`
+**Figura 1.** *FC media por condición y derivación, y tacograma de D1.*
+
+<img width="1487" height="406" alt="Fig1_10" src="https://github.com/user-attachments/assets/0b8491a0-54e0-4bab-917e-3a291ab262f1" />
 
 ### 3.3 Latidos segmentados
 
@@ -172,63 +166,30 @@ No hubo paquetes perdidos en ningún archivo. Las duraciones fueron de 30.4 s a 
 | D2 | 265 × 60 | 54 | 76 | 62 | 73 |
 | D3 | 238 × 60 | 54 | 64 | 51 | 69 |
 
-**Figura 4.** *Latidos segmentados y latido promedio por condición (D1, D2 y D3).*
-`[Insertar imagen: salida de la celda B.4 del notebook de cada derivación]`
+**Figura 2.** *Latidos segmentados y latido promedio por condición (D1, D2 y D3).*
 
-**Figura 5.** *Latido promedio de cada condición superpuesto.*
-`[Insertar imagen: segunda figura de la celda B.4]`
+<img width="1949" height="1215" alt="Fig2_l10" src="https://github.com/user-attachments/assets/2e10dade-f43b-4fb6-85f5-172547beda0b" />
+
+**Figura 3.** *Latido promedio de cada condición superpuesto.*
+
+<img width="1044" height="1215" alt="Fig3_l10" src="https://github.com/user-attachments/assets/b0e96c96-0965-4d4e-97fe-12358a59c95b" />
 
 ### 3.4 Resultados de la extracción de características
 
 Cada derivación produjo una tabla de **24 características por latido** (162, 265 y 238 latidos en D1, D2 y D3). Promedio de algunas características representativas por condición:
 
-**D1**
 
-| Característica | Basal | Hiperventilación | Hipoventilación | Aeróbica |
-|---|---:|---:|---:|---:|
-| FC_lpm | 116.4 | 126.5 | 191.7 | 138.5 |
-| amp_R (mV) | 0.260 | 0.249 | 0.265 | 0.125 |
-| amp_T (mV) | 0.071 | 0.121 | 0.256 | 0.023 |
-| t_RT_ms | 343.9 | 290.6 | 260.0 | 341.5 |
-| desv_est | 0.050 | 0.067 | 0.111 | 0.060 |
-| curtosis | 6.708 | 2.021 | 0.749 | 1.072 |
-| frac_5_15Hz | 0.456 | 0.414 | 0.568 | 0.270 |
+**Figura 4.** *Características de ECG de D1*
 
-**D2**
+<img width="455" height="667" alt="Fig4_l10" src="https://github.com/user-attachments/assets/5902ac3e-1720-40e8-9b8f-ff772aded65e" />
 
-| Característica | Basal | Hiperventilación | Hipoventilación | Aeróbica |
-|---|---:|---:|---:|---:|
-| FC_lpm | 109.4 | 130.6 | 108.9 | 148.1 |
-| amp_R (mV) | 1.085 | 0.959 | 1.094 | 0.975 |
-| amp_T (mV) | 0.357 | 0.338 | 0.330 | 0.610 |
-| t_RT_ms | 156.1 | 240.1 | 184.2 | 250.5 |
-| desv_est | 0.208 | 0.198 | 0.205 | 0.281 |
-| curtosis | 7.194 | 4.976 | 7.938 | 1.040 |
-| frac_5_15Hz | 0.459 | 0.427 | 0.477 | 0.287 |
+**Figura 5.** *Características de ECG de D2*
 
-**D3**
+<img width="460" height="672" alt="Fig5_l10" src="https://github.com/user-attachments/assets/86f8e194-bd1a-4743-af14-adf5d32e82f0" />
 
-| Característica | Basal | Hiperventilación | Hipoventilación | Aeróbica |
-|---|---:|---:|---:|---:|
-| FC_lpm | 110.3 | 131.4 | 104.2 | 140.6 |
-| amp_R (mV) | 1.158 | 1.092 | 1.109 | 1.380 |
-| amp_T (mV) | 0.344 | 0.307 | 0.307 | 0.469 |
-| t_RT_ms | 162.8 | 196.7 | 162.5 | 153.8 |
-| desv_est | 0.240 | 0.229 | 0.233 | 0.282 |
-| curtosis | 7.688 | 6.943 | 7.756 | 6.369 |
-| frac_5_15Hz | 0.444 | 0.418 | 0.470 | 0.467 |
+**Figura 6.** *Características de ECG de D3*
 
-**Figura 6.** *Medidas sobre un latido basal: isoeléctrica, Q, R, S y T (ejemplo por derivación).*
-`[Insertar imagen: salida de la celda B.5.1 del notebook]`
-
-**Figura 7.** *Espectro promedio del latido por condición (FFT).*
-`[Insertar imagen: salida de la celda B.5.3 del notebook]`
-
-**Figura 8.** *Coeficientes wavelet db4 de un latido (cA6, cD6, cD5, cD4).*
-`[Insertar imagen: salida de la celda B.5.4 del notebook]`
-
-**Figura 9.** *Boxplots estandarizados (z-score) de características seleccionadas por condición.*
-`[Insertar imagen: salida de la celda B.6 del notebook]`
+<img width="452" height="672" alt="Fig6_l10" src="https://github.com/user-attachments/assets/6fa56aef-f9a2-4799-84b3-60833ba8ff74" />
 
 ### 3.5 Clasificación: comparación de 5 algoritmos
 
@@ -272,14 +233,6 @@ Los valores son media ± desviación estándar entre pliegues.
 | D2 | Regresión Logística | 0.661 | Todos los modelos quedan dentro de una desviación estándar |
 | D3 | SVM (RBF) | 0.699 | Variación entre pliegues muy alta (± 0.197) |
 
-**Figura 10.** *Comparación de 5 algoritmos (exactitud y F1 macro) — D1.*
-`[Insertar imagen: salida de la celda B.7 del notebook D1]`
-
-**Figura 11.** *Comparación de 5 algoritmos (exactitud y F1 macro) — D2.*
-`[Insertar imagen: salida de la celda B.7 del notebook D2]`
-
-**Figura 12.** *Comparación de 5 algoritmos (exactitud y F1 macro) — D3.*
-`[Insertar imagen: salida de la celda B.7 del notebook D3]`
 
 ### 3.6 Matrices de confusión del mejor modelo (filas: clase real; columnas: clase predicha)
 
@@ -318,8 +271,17 @@ Los valores son media ± desviación estándar entre pliegues.
 | D2 | `desv_est`, `FC_lpm`, `RR_prev_ms`, `RR_next_ms`, `amp_T` |
 | D3 | `desv_est`, `RR_prev_ms`, `FC_lpm`, `p25`, `potencia_0.5_40` |
 
-**Figura 13.** *Matriz de confusión del mejor modelo e importancia de características (Random Forest) — D1, D2 y D3.*
-`[Insertar imagen: salida de la celda B.7 (segunda figura) de cada notebook]`
+**Figura 7.** *Matriz de confusión del mejor modelo e importancia de características — D1*
+
+<img width="1519" height="537" alt="Fig7_l10" src="https://github.com/user-attachments/assets/83f68736-547a-45fa-9696-3d5afdb7510f" />
+
+**Figura 8.** *Matriz de confusión del mejor modelo e importancia de características — D2*
+
+<img width="1519" height="537" alt="fig8" src="https://github.com/user-attachments/assets/8923a8f0-9ebd-4559-9f29-46e3b72da857" />
+
+**Figura 9.** *Matriz de confusión del mejor modelo e importancia de características — D3.*
+
+<img width="1523" height="537" alt="fig9" src="https://github.com/user-attachments/assets/5a8c5186-6fa3-4f34-9cc4-8ba2df2fb333" />
 
 ### 3.8 ¿De dónde viene la información? (F1 macro)
 
@@ -331,8 +293,6 @@ Los valores son media ± desviación estándar entre pliegues.
 | KNN (k = 5) | 0.707 | 0.604 | 0.701 | 0.620 | 0.472 | 0.601 | 0.486 | 0.491 | 0.456 |
 | SVM (RBF) | 0.741 | 0.548 | 0.739 | 0.607 | 0.346 | 0.648 | 0.699 | 0.543 | 0.639 |
 
-**Figura 14.** *Aporte del ritmo y de la forma del latido (F1 macro) — D1, D2 y D3.*
-`[Insertar imagen: salida de la celda B.7 (experimento de ritmo) de cada notebook]`
 
 ### 3.9 Efecto de la fuga de datos (Random Forest, solo forma, F1 macro)
 
@@ -372,29 +332,16 @@ Por todo esto, **el ranking de D1 no debe interpretarse como evidencia de que D1
 - **Ningún modelo se impone con claridad.** En D2 el mejor (Regresión Logística, 0.661) y el peor (Random Forest, 0.563) difieren en 0.098, lo cual es similar a la desviación estándar entre pliegues (0.07–0.14). En D3 el SVM (0.699 ± 0.197) supera al Random Forest (0.631 ± 0.210) por menos que esa variación. Con 3 pliegues y 12–14 bloques de 10 s, las diferencias entre algoritmos **no son estadísticamente concluyentes**.
 - **El mejor modelo cambia entre derivaciones** (Regresión Logística en D2, SVM en D3). Esto indica que el resultado depende más de los datos de cada derivación que de una superioridad intrínseca de un algoritmo. **No se reproduce la superioridad de Random Forest del artículo base.**
 - **D3 tiene mayor variabilidad** (± 0.12 a ± 0.21 en F1), así que su puntaje depende mucho de qué bloques caen en prueba.
-
-### 4.4 Qué clases se confunden
-
 - **En D2**, la Regresión Logística confunde basal con hipoventilación (20 de 54 basales clasificados como hipoventilación y 10 de 62 hipoventilaciones como basal). También confunde hiperventilación con aeróbica (22 de 76). Esto tiene sentido fisiológico: **basal e hipoventilación tienen casi la misma FC** (109.4 y 108.9 lpm) y las demás medidas son similares, y **hiperventilación y aeróbica** son las dos condiciones con FC elevada.
 - **En D3**, el SVM clasifica 36 de 51 latidos de hipoventilación como basal (solo acierta 11). Es la confusión más fuerte de todas las matrices, y coincide con que basal e hipoventilación son casi idénticas en D3 (FC de 110.3 y 104.2 lpm, `amp_R`, `amp_T`, `desv_est` y `frac_5_15Hz` prácticamente iguales). La clase aeróbica es la mejor reconocida (67 de 69).
 - **Conclusión de las matrices:** las condiciones con un cambio fisiológico claro (aeróbica) se clasifican bien; las que se parecen al reposo (hipoventilación) son las más difíciles.
 
-### 4.5 ¿Ritmo o forma del latido?
+### 4.4 Ritmo o forma del latido
 
+- **En D1** el resultado es poco informativo por los problemas mencionados en la sección 4.2 (por ejemplo, el Árbol de Decisión llega a 0.896 solo con ritmo).
 - **En D2**, quitar el ritmo no empeora el desempeño (F1 sin ritmo de 0.66–0.72 para DT, LR y RF, similar o mejor que con todas las características) mientras que **con solo ritmo cae a 0.34–0.47**, apenas por encima del azar. Esto indica que la **forma** del latido aporta más información que el ritmo en D2, algo coherente con que basal e hipoventilación tienen el mismo ritmo.
 - **En D3**, el SVM mantiene 0.639 sin ritmo contra 0.543 con solo ritmo, y el Random Forest 0.591 contra 0.528. La forma aporta algo más que el ritmo, pero la diferencia es pequeña frente a la variabilidad.
-- **En D1** el resultado es poco informativo por los problemas de la sección 4.2 (por ejemplo, el Árbol de Decisión llega a 0.896 solo con ritmo).
 - Aun así, la importancia de características de Random Forest en D2 y D3 incluye `FC_lpm`, `RR_prev_ms` y `RR_next_ms` entre las más altas, junto con `desv_est`. Esto indica que el ritmo y la energía global del latido (`desv_est`) son las variables de las que más depende el modelo.
-
-### 4.6 Fuga de datos y limitaciones técnicas
-
-- **La fuga de datos infla el desempeño.** En D2, Random Forest con solo forma pasa de 0.692 (bloques) a 0.897 (latidos mezclados), y en D3 de 0.591 a 0.890. Esto confirma que, al mezclar latidos, el modelo reconoce más "el registro" (el archivo y la sesión) que la condición fisiológica. La validación por bloques es la que debe reportarse.
-- **Observación sobre la frecuencia de muestreo.** El texto del cuaderno supone 1000 Hz, pero la tabla de lectura de los tres notebooks reporta **100 Hz** y los latidos tienen 60 muestras (consistente con 100 Hz). Esto tiene consecuencias:
-  - El notch de 60 Hz queda por encima de la frecuencia de Nyquist (50 Hz), por lo que no tiene un efecto físico real en esta señal.
-  - Las bandas wavelet de la tabla del cuaderno corresponden a 1000 Hz. Con 100 Hz, cada nivel cubre otro rango (aproximadamente cD4: 3.1–6.3 Hz, cD5: 1.6–3.1 Hz, cD6: 0.8–1.6 Hz y cA6: menos de 0.8 Hz), de modo que las características `wav_E_*` ya no separan P, QRS y T como indica la guía. Además, descomponer 60 muestras a 6 niveles con db4 genera fuertes efectos de borde.
-  - Las ventanas morfológicas están definidas en milisegundos, pero con 100 Hz tienen una resolución de 10 ms, por lo que `dur_QS_ms` y `t_RT_ms` solo toman valores múltiplos de 10.
-- **Medidas `t_RT_ms`:** en D2 y D3 el valor promedio de basal e hipoventilación (156–184 ms) queda muy cerca del límite inferior de la ventana de búsqueda de T (150 ms). Es probable que el máximo se esté ubicando en el borde de la ventana y no en la onda T real.
-- **Un solo participante, un archivo de ~30 s por condición.** El modelo aprende las condiciones de esta persona en esta sesión, y parte de lo que distingue a dos archivos puede ser el propio registro (contacto de los electrodos, minutos de diferencia entre derivaciones).
 
 ---
 
