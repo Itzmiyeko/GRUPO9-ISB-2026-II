@@ -126,7 +126,13 @@ Se juntan las cinco familias para todos los latidos. El resultado es una tabla d
 
 ## 3. Resultados
 
-### 3.1 Calidad de los registros (comunes a los tres notebooks)
+### 3.1 Archivos Python
+
+* [Derivada 1 (DI)]([https://github.com/Itzmiyeko/GRUPO9-ISB-2026-II/blob/main/Laboratorios/Lab_10/Extracci%C3%B3n%20de%20caracter%C3%ADsticas%20-%20Python/LAB11_ECG_Extraccion_Caracteristicas_D1.ipynb)
+* [Derivada 2 (DII)](https://github.com/Itzmiyeko/GRUPO9-ISB-2026-II/blob/main/Laboratorios/Lab_10/Extracci%C3%B3n%20de%20caracter%C3%ADsticas%20-%20Python/LAB11_ECG_Extraccion_Caracteristicas_D2.ipynb)
+* [Derivada 3 (DIII)](https://github.com/Itzmiyeko/GRUPO9-ISB-2026-II/blob/main/Laboratorios/Lab_10/Extracci%C3%B3n%20de%20caracter%C3%ADsticas%20-%20Python/LAB11_ECG_Extraccion_Caracteristicas_D3.ipynb) 
+
+### 3.2 Calidad de los registros (comunes a los tres notebooks)
 
 | Condición | Derivación | QRS original | Latidos detectados | Latidos válidos | % RR anómalos | Muestras saturadas | Estado |
 |---|---|---|---:|---:|---:|---:|:---:|
@@ -145,7 +151,7 @@ Se juntan las cinco familias para todos los latidos. El resultado es una tabla d
 
 No hubo paquetes perdidos en ningún archivo. Las duraciones fueron de 30.4 s a 31.1 s, salvo D2 hiperventilación (36.6 s) y D2 hipoventilación (35.2 s).
 
-### 3.2 Frecuencia cardiaca media (lpm)
+### 3.3 Frecuencia cardiaca media (lpm)
 
 | Condición | D1 | D2 | D3 |
 |---|---:|---:|---:|
@@ -158,7 +164,7 @@ No hubo paquetes perdidos en ningún archivo. Las duraciones fueron de 30.4 s a 
 
 <img width="1487" height="406" alt="Fig1_10" src="https://github.com/user-attachments/assets/0b8491a0-54e0-4bab-917e-3a291ab262f1" />
 
-### 3.3 Latidos segmentados
+### 3.4 Latidos segmentados
 
 | Derivación | Matriz de latidos | Basal | Hiperventilación | Hipoventilación | Aeróbica |
 |---|---|---:|---:|---:|---:|
@@ -174,7 +180,7 @@ No hubo paquetes perdidos en ningún archivo. Las duraciones fueron de 30.4 s a 
 
 <img width="1044" height="1215" alt="Fig3_l10" src="https://github.com/user-attachments/assets/b0e96c96-0965-4d4e-97fe-12358a59c95b" />
 
-### 3.4 Resultados de la extracción de características
+### 3.5 Resultados de la extracción de características
 
 Cada derivación produjo una tabla de **24 características por latido** (162, 265 y 238 latidos en D1, D2 y D3). Promedio de algunas características representativas por condición:
 
@@ -191,7 +197,7 @@ Cada derivación produjo una tabla de **24 características por latido** (162, 2
 
 <img width="452" height="672" alt="Fig6_l10" src="https://github.com/user-attachments/assets/6fa56aef-f9a2-4799-84b3-60833ba8ff74" />
 
-### 3.5 Clasificación: comparación de 5 algoritmos
+### 3.6 Clasificación: comparación de 5 algoritmos
 
 Los valores son media ± desviación estándar entre pliegues.
 
@@ -234,7 +240,7 @@ Los valores son media ± desviación estándar entre pliegues.
 | D3 | SVM (RBF) | 0.699 | Variación entre pliegues muy alta (± 0.197) |
 
 
-### 3.6 Matrices de confusión del mejor modelo (filas: clase real; columnas: clase predicha)
+### 3.7 Matrices de confusión del mejor modelo (filas: clase real; columnas: clase predicha)
 
 **D1 — Árbol de Decisión**
 
@@ -263,7 +269,7 @@ Los valores son media ± desviación estándar entre pliegues.
 | Hipoventilación | **36** | 4 | 11 | 0 |
 | Aeróbica | 0 | 2 | 0 | 67 |
 
-### 3.7 Importancia de características (Random Forest, 5 más importantes)
+### 3.8 Importancia de características (Random Forest, 5 más importantes)
 
 | Derivación | Top 5 |
 |---|---|
@@ -283,7 +289,7 @@ Los valores son media ± desviación estándar entre pliegues.
 
 <img width="1523" height="537" alt="fig9" src="https://github.com/user-attachments/assets/5a8c5186-6fa3-4f34-9cc4-8ba2df2fb333" />
 
-### 3.8 ¿De dónde viene la información? (F1 macro)
+### 3.9 ¿De dónde viene la información? (F1 macro)
 
 | Modelo | D1 todas | D1 solo ritmo | D1 sin ritmo | D2 todas | D2 solo ritmo | D2 sin ritmo | D3 todas | D3 solo ritmo | D3 sin ritmo |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -294,7 +300,7 @@ Los valores son media ± desviación estándar entre pliegues.
 | SVM (RBF) | 0.741 | 0.548 | 0.739 | 0.607 | 0.346 | 0.648 | 0.699 | 0.543 | 0.639 |
 
 
-### 3.9 Efecto de la fuga de datos (Random Forest, solo forma, F1 macro)
+### 3.10 Efecto de la fuga de datos (Random Forest, solo forma, F1 macro)
 
 | Derivación | Latidos mezclados al azar (con fuga) | Validación por bloques (correcta) |
 |---|---:|---:|
