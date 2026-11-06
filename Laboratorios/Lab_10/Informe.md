@@ -1,4 +1,4 @@
-# Tratamiento de la señal ECG: detección de latidos, extracción de características y clasificación
+# Análisis de la señal ECG: Extracción de características y clasificación
 
 **Curso:** Introducción a las Señales Biomédicas — Universidad Peruana Cayetano Heredia
 
