@@ -128,9 +128,11 @@ Se juntan las cinco familias para todos los latidos. El resultado es una tabla d
 
 ### 3.1 Archivos Python
 
-* [Derivada 1 (DI)]([https://github.com/Itzmiyeko/GRUPO9-ISB-2026-II/blob/main/Laboratorios/Lab_10/Extracci%C3%B3n%20de%20caracter%C3%ADsticas%20-%20Python/LAB11_ECG_Extraccion_Caracteristicas_D1.ipynb)
+* [Derivada 1 (DI)](https://github.com/Itzmiyeko/GRUPO9-ISB-2026-II/blob/main/Laboratorios/Lab_10/Extracci%C3%B3n%20de%20caracter%C3%ADsticas%20-%20Python/LAB11_ECG_Extraccion_Caracteristicas_D1.ipynb)
 * [Derivada 2 (DII)](https://github.com/Itzmiyeko/GRUPO9-ISB-2026-II/blob/main/Laboratorios/Lab_10/Extracci%C3%B3n%20de%20caracter%C3%ADsticas%20-%20Python/LAB11_ECG_Extraccion_Caracteristicas_D2.ipynb)
 * [Derivada 3 (DIII)](https://github.com/Itzmiyeko/GRUPO9-ISB-2026-II/blob/main/Laboratorios/Lab_10/Extracci%C3%B3n%20de%20caracter%C3%ADsticas%20-%20Python/LAB11_ECG_Extraccion_Caracteristicas_D3.ipynb) 
+
+[Las respuestas del cuestionario del Colab del Laboratorio se realizo en otro archivo aparte:] (https://github.com/Itzmiyeko/GRUPO9-ISB-2026-II/blob/main/Laboratorios/Lab_10/Extracci%C3%B3n%20de%20caracter%C3%ADsticas%20-%20Python/LAB11_ECG_Extraccion_Caracteristicas_Preguntas_respondidas%20(1).ipynb)
 
 ### 3.2 Calidad de los registros (comunes a los tres notebooks)
 
