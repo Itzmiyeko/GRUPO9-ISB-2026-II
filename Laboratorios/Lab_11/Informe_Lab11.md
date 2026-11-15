@@ -1,4 +1,4 @@
- Informe de Laboratorio 11: Tratamiento de la señal EEG, ritmos cerebrales, filtro ICA y extracción de características
+# Informe de Laboratorio 11: Tratamiento de la señal EEG, ritmos cerebrales, filtro ICA y extracción de características
 
 **Universidad Peruana Cayetano Heredia — Introducción a las Señales Biomédicas**
 
